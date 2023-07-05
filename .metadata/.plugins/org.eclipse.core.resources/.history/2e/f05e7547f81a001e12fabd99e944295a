@@ -1,0 +1,31 @@
+package edu.pnu.config.filter;
+
+import java.io.IOException;
+
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+//로그인 인증을 위한 ㅣ큐리티 필터 작성
+public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+@Override
+//로그인 인증 시도를 위한 메소드 오버라이딩
+public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
+		throws AuthenticationException {
+	//여기에서 인증을 위한 토큰을 생성해서 인증을 요청하고 성공하면 세션에 인증정보를 등록한다.
+	return null;
+	}
+
+@Override
+//성공적으로 로그인 인증이 완료된 후 처리를 위한 메소드 오버라이딩
+	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
+			Authentication authResult) throws IOException, ServletException {
+	//JWT 토큰을 만들어서 resp의 Header에 등록한다.	
+	chain.doFilter(req, resp);
+	}
+}

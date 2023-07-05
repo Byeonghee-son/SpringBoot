@@ -1,0 +1,9 @@
+package edu.pnu.persistence;
+
+import edu.pnu.domain.Member;
+
+public class MemberRepository extends JpaRepository<Member, String>{
+
+	div_rankList > ol > li:nth-child(1) > div > div > div.column.tit > p.tit > a > a
+
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="EUC-KR">
+<title>회원가입</title>
+</head>
+<body>
+	<h2>회원가입</h2>
+	<form action="join" method="post">
+		<table>
+			<tr>
+				<td>username</td>
+				<td><input type="text" name="username" placeholder="username" /></td>
+			</tr>
+			<tr>
+				<td>password</td>
+				<td><input type="password" name="password" placeholder="password" /></td>
+			</tr>
+			<tr>
+				<td><a href="/welcome"><input type="submit" value="회원가입"/></a></td>
+				
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

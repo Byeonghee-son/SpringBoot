@@ -1,0 +1,25 @@
+package edu.pnu.config.auth;
+
+import java.io.IOException;
+
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class JWTAutorizationFilter extends BasicAuthenticationFilter {
+	//생성자는 부모 클래스가 AuthenticationManager 객체를 요구한다
+	public JWTAutorizationFilter(AuthenticationManager authenticationManager) {
+		super(authenticationManager);
+	}
+	
+	//필터링 메서드를 오버라이드한다.
+	@Override
+	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+		chain.doFilter(request, response);
+	}
+}

@@ -1,0 +1,7 @@
+package edu.pnu.config.auth;
+
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+
+public class JWTAutorizationFilter extends BasicAuthenticationFilter {
+
+}
